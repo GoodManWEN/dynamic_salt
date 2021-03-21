@@ -1,3 +1,3 @@
-import testlib
+from dsalt import *
 
-print(testlib.test())
+print(salt_core(b'Hello World'))

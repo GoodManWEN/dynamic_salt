@@ -1,7 +1,30 @@
+# VSCode
+.vscode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Local History for Visual Studio Code
+.history/
+
+# Cargo
 /target
+
+# Remove Cargo.lock from gitignore if creating an executable, leave it for libraries
+# More information here http://doc.crates.io/guide.html#cargotoml-vs-cargolock
+Cargo.lock
+
+# Python
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+!misc/
+!misc/**
+*$py.class
+/test/__pycache__/
 *.lock
 *.egg-info/
 *.egg
-__pycache__/
-*.py[cod]
-.vscode/
