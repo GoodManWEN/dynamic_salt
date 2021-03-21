@@ -31,6 +31,7 @@ jobs:
             ext_name: so
             opt_name: mv
             del_name: rm
+            system_name: linux
         python-version: ['3.9']
     steps:
     - uses: actions/checkout@v2
@@ -44,10 +45,15 @@ jobs:
         python -m pip install pytest pytest-asyncio
         python -m pip install -r requirements.txt
     - name: Build
-      # working-directory: ./src
       run: |
         cargo build --release
-        ${{ matrix.opt_name }} ./target/release/*.${{ matrix.ext_name }} ./tests
+    - name: Rename & copy
+      working-directory: ./target/release
+      run : |
+        if [ "${{ matrix.system_name }}" = "linux" ]; then
+          for i in *.so; do mv $i $(echo $i | sed 's/lib//g'); done
+        fi
+        ${{ matrix.opt_name }} ./*.${{ matrix.ext_name }} ../../tests
     - name: Test with pytest
       run: |
         pytest -s
