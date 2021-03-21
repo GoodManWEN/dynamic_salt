@@ -1,0 +1,7 @@
+/target
+*.lock
+*.egg-info/
+*.egg
+__pycache__/
+*.py[cod]
+.vscode/

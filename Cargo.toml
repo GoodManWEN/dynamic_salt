@@ -1,0 +1,18 @@
+[package]
+name = "pylib"
+version = "0.1.0"
+authors = ["GoodManWEN <44322449+GoodManWEN@users.noreply.github.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name = "testlib"
+crate-type = ["cdylib"]
+
+[dependencies.pyo3]
+version = "0.13.2"
+features = ["extension-module"]
+
+[dependencies]
+hashbrown = "0.9"
