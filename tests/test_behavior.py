@@ -17,12 +17,12 @@ async def test_speed():
     for _ in range(st_time):
         salt_core(b"")
     ed_time = time.time()
-    print(,'\n'f"Empty array takes time: {round((ed_time - st_time) * 1000,2)} ns")
+    print('\n',f"Empty array takes time: {round((ed_time - st_time) * 1000,2)} ns")
     st_time = time.time()
     for _ in range(st_time):
         salt_core(b"Hello world")
     ed_time = time.time()
-    print(,'\n'f"Default array takes time: {round((ed_time - st_time) * 1000,2)} ns")
+    print('\n',f"Default array takes time: {round((ed_time - st_time) * 1000,2)} ns")
 
 
 @pytest.mark.asyncio
