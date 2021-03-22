@@ -50,7 +50,7 @@ fn salt_core (
     let mut mask_cursor: usize = 0;
     let mut output: Vec<u8> = Vec::new();
     let reset_limit = (hash_masked.iter().fold(127u8, |a, &b| a.max(b))) as u16;
-    let mut recur_sum:u16 = 127 - 1;
+    let mut recur_sum:u16 = reset_limit - 1;
     for &i in input {
         output.push(i);
         recur_sum += i as u16;
