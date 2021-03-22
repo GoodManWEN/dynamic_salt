@@ -24,3 +24,7 @@ from dsalt import salt_core
 print(salt_core(b"Hello World"))
 print(salt_core("你好世界".encode()))
 ```
+
+## Performance
+
+For short utf-8 strings, latency should between 300-500ns on current CPUs.
