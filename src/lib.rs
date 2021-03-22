@@ -1,6 +1,5 @@
 #[macro_use] mod macros;
 
-use std::f64;
 use pyo3::prelude::*;
 use pyo3::wrap_pyfunction;
 use pyo3::types::{PyBytes};
